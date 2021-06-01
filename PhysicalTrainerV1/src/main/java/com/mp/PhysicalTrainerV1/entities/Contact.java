@@ -2,14 +2,11 @@ package com.mp.PhysicalTrainerV1.entities;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,10 +17,6 @@ public class Contact {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CONTACT_ID")
 	private int contactId;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CONTACT_FROM_TYPE", referencedColumnName = "CONTACT_FROM_TYPE_ID")
-	private ContactFromType contactFromType;
 
 	@Column(name="CONTACT_NAME")
 	private String contactName;
@@ -51,14 +44,6 @@ public class Contact {
 
 	public void setContactId(int contactId) {
 		this.contactId = contactId;
-	}
-
-	public ContactFromType getContactFromType() {
-		return contactFromType;
-	}
-
-	public void setContactFromType(ContactFromType contactFromType) {
-		this.contactFromType = contactFromType;
 	}
 
 	public String getContactName() {
@@ -108,15 +93,5 @@ public class Contact {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-
-	@Override
-	public String toString() {
-		return "Contact [contactId=" + contactId + ", contactFromType=" + contactFromType + ", contactName="
-				+ contactName + ", contactMobile=" + contactMobile + ", contactEmail=" + contactEmail
-				+ ", contactDescription=" + contactDescription + ", contactStatus=" + contactStatus + ", createDate="
-				+ createDate + "]";
-	}
-	
-	
 	
 }
