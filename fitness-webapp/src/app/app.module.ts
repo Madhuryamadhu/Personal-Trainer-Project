@@ -10,8 +10,6 @@ import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +20,7 @@ import { SignupComponent } from './signup/signup.component';
     MeetMeComponent,
     WhatWeDoComponent,
     HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-    SignupComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
