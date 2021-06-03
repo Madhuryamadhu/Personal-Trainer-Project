@@ -1251,7 +1251,7 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
     padding: 25px 19px !important;
     color: #cfcece !important;
     border-radius: 40px !important;
-    height: 75px !important;
+    height: 60px !important;
 }
 .form-control:focus, .form-control:hover {
     border: #b1b0b0 solid 1px !important;
@@ -1266,13 +1266,13 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
     padding-top: 73px;
 }
 .send-btn {
-    font-size: 26px;
+    font-size: 16px;
     border: #000000 solid 2px;
     padding: 16px 70px;
     background-color: #000000;
     color: #fff;
     border-radius: 40px;
-    margin: 0 auto;
+    margin:12px;
 }
 .send-btn:hover {
     background-color: #18bb18;
