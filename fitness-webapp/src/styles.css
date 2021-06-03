@@ -1261,14 +1261,15 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
     padding: 35px 19px;
     color: #655f5f !important;
     width: 100%;
-    border: #b1b0b0 solid 1px;
+    border: #b1b0b0 solid 1px !important;
     border-radius: 40px;
     padding-top: 73px;
 }
 .send-btn {
-    font-size: 16px;
-    border: #000000 solid 2px;
-    padding: 16px 70px;
+    
+    font-size: 12px;
+    padding: 14px 66px;
+    border: #000000 solid 2px !important;
     background-color: #000000;
     color: #fff;
     border-radius: 40px;
