@@ -29,7 +29,7 @@ public class ContactController {
 	
 	
 	
-	@PostMapping("/createContact")
+	@PostMapping()
 	public ContactResponse createContact(@RequestBody ContactRequest request) {
 		
 		
