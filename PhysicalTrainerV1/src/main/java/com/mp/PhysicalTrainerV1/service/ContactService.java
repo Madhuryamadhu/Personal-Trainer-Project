@@ -1,8 +1,8 @@
 package com.mp.PhysicalTrainerV1.service;
 
-import com.mp.PhysicalTrainerV1.entities.Contact;
+import com.mp.PhysicalTrainerV1.entities.ContactEntity;
 
 public interface ContactService {
 
-	public void saveContact(Contact contact);
+	public ContactEntity saveContact(ContactEntity entity);
 }

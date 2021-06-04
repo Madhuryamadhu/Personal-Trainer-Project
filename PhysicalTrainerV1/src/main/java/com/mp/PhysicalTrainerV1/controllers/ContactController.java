@@ -6,27 +6,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mp.PhysicalTrainerV1.entities.Contact;
+import com.mp.PhysicalTrainerV1.entities.ContactEntity;
+import com.mp.PhysicalTrainerV1.mapper.ContactMapper;
+import com.mp.PhysicalTrainerV1.request.ContactRequest;
+import com.mp.PhysicalTrainerV1.response.ContactResponse;
 import com.mp.PhysicalTrainerV1.service.ContactService;
+import com.mp.common.codes.MessageCode;
 
 @RestController
 @RequestMapping("contact")
 public class ContactController {
 
+	@Autowired
 	private ContactService contactService;
+	
 	
 	@Autowired
 	public ContactController(ContactService theContactService) {
 		contactService=theContactService;
 	}
 	
-	@PostMapping
-	public Contact createContact(@RequestBody Contact contact) {
+	
+	
+	
+	@PostMapping("/createContact")
+	public ContactResponse createContact(@RequestBody ContactRequest request) {
 		
-		contact.setContactId(0);
 		
-		contactService.saveContact(contact);
+		ContactEntity entity=ContactMapper.fromContactRequest(request);
+		ContactEntity created=contactService.saveContact(entity);
 		
-		return contact;
+		return ContactMapper.toContactResponse(created, MessageCode.CREATE_CONTACT_SUCCESS);
 	}
 }
