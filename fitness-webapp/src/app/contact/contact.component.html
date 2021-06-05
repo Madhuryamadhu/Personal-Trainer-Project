@@ -16,13 +16,14 @@
 </div>
 
 <div class="Contact ">
-  <div class="container ">
+  <div class="container">
     
     <div class="row ">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  col-lg-offset-3">
         <form ngForm #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && addContact()" >
           <div class="row ">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+            <h4><label for="psw"><b>Name:</b></label></h4> 
           <input 
           [(ngModel)]="contact.contactName"
           required
@@ -44,9 +45,11 @@
               </span>
           </div>
           </div>
+        </div>
+        <div class="row ">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-
-          <input class="form-control " placeholder="Phone " 
+          <h4><label for="psw"><b>Phone Number:</b></label></h4> 
+          <input class="form-control " placeholder="Phone Number" 
           [(ngModel)]="contact.contactMobile"
           required
           type="number"
@@ -65,8 +68,11 @@
               </span>
         </div>
         </div>
+      </div>
+      <div class="row ">
+      
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-
+          <h4><label for="psw"><b>Email:</b></label></h4> 
           <input class="form-control " placeholder="Email " 
           type="Email"
           [(ngModel)]="contact.contactEmail"
@@ -94,13 +100,11 @@
               </span>
         </div>
         </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-
-          <input class="form-control " placeholder="Select Coach " type="Select Coach ">
         </div>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-
-          <textarea class="textarea " placeholder="Message "
+        <div class="row ">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+          <h4><label for="psw"><b>Description:</b></label></h4> 
+          <textarea class="textarea " placeholder="Description "
           [(ngModel)]="contact.contactDescription"
           #description=ngModel
           required
@@ -118,7 +122,8 @@
           </span>
         </div>
         </div>
-          </div>
+        </div>
+          
           <button class="send-btn"  
           type="submit">Send</button>
         </form>
