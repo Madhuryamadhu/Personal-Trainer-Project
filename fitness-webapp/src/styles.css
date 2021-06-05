@@ -1246,24 +1246,24 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
 }
 .form-control {
     border: #b1b0b0 solid 1px !important;
-    margin-bottom: 37px !important;
+    margin-bottom: 50px !important;
     border-radius: inherit !important;
     padding: 25px 19px !important;
-    color: #cfcece !important;
     border-radius: 40px !important;
     height: 60px !important;
+    font-size: 20px !important;
 }
 .form-control:focus, .form-control:hover {
     border: #b1b0b0 solid 1px !important;
 }
 .textarea {
-    margin-bottom: 37px;
+    margin-bottom: 50px;
     padding: 35px 19px;
-    color: #655f5f !important;
     width: 100%;
     border: #b1b0b0 solid 1px !important;
     border-radius: 40px;
     padding-top: 73px;
+    font-size: 20px !important;
 }
 .send-btn {
     font-size: 12px;
@@ -1274,11 +1274,11 @@ input[type="checkbox"] .styled:checked+label::after, input[type="radio"] .styled
     border-radius: 40px;
     margin:12px;
 }
-.send-btn:hover {
+/*.send-btn:hover {
     background-color: #18bb18;
     border: #18bb18 solid 2px;
     color: #fff;
-}
+}*/
 .footer {
     background-color: #032703;
     padding-bottom: 36px;
@@ -1510,4 +1510,9 @@ a.readmore_bt {
 }
 .button_section {
     padding-top: 40px;
+}
+
+.active-link{
+    color: #18bb18 !important;
+    background: #eff1f2;
 }

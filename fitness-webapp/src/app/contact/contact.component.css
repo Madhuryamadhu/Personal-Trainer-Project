@@ -1,0 +1,10 @@
+.error__msg {
+    color: #ef3e3e !important;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: -40px;
+    margin-left: 10px;
+  }
+  .red-border-class{
+    border-color: #ef3e3e !important;
+  }

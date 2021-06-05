@@ -20,18 +20,79 @@
     
     <div class="row ">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-        <form>
+        <form ngForm #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && addContact()" >
           <div class="row ">
           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-          <input class="form-control " placeholder="Your name " type="Your name ">
+          <input 
+          [(ngModel)]="contact.contactName"
+          required
+          class="form-control "
+          placeholder="Your name " 
+          type="Your name "
+          name="name"
+          #name=ngModel
+          [ngClass]="{'red-border-class': name.invalid && (name.dirty || name.touched || contactForm.submitted)}">
+          <div
+              class="validation-error"
+              *ngIf="name.invalid && (name.dirty || name.touched || contactForm.submitted)"
+            >
+              <span
+                class="help-block with-errors error__msg"
+                *ngIf="name.errors?.required"
+              >
+                Please enter your name
+              </span>
+          </div>
+          </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+
+          <input class="form-control " placeholder="Phone " 
+          [(ngModel)]="contact.contactMobile"
+          required
+          type="number"
+          name="phone" 
+          #phone=ngModel
+          [ngClass]="{'red-border-class': phone.invalid && (phone.dirty || phone.touched || contactForm.submitted)}">
+          <div
+              class="validation-error"
+              *ngIf="phone.invalid && (phone.dirty || phone.touched || contactForm.submitted)"
+            >
+              <span
+                class="help-block with-errors error__msg"
+                *ngIf="phone.errors?.required"
+              >
+                Please enter your phone number
+              </span>
+        </div>
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
 
-          <input class="form-control " placeholder="Phone " type="Phone ">
+          <input class="form-control " placeholder="Email " 
+          type="Email"
+          [(ngModel)]="contact.contactEmail"
+          #email=ngModel
+          pattern="[a-zA-Z0-9\+\.\_\%\-\+]{1,256}\@[a-zA-Z0-9][a-zA-Z0-9\-]{0,64}(\.[a-zA-Z0-9][a-zA-Z0-9\-]{0,25})+"
+          name="email"
+          required
+          [ngClass]="{'red-border-class': email.invalid && (email.dirty || email.touched ||contactForm.submitted)}"
+          >
+          <div
+          class="validation-error"
+          *ngIf="email.invalid && (email.dirty || email.touched ||contactForm.submitted)"
+        >
+          <span
+            class="help-block with-errors error__msg"
+            *ngIf="email.errors?.required"
+          >
+            Please enter your email
+          </span>
+          <span
+                class="help-block with-errors error__msg"
+                *ngIf="email.errors?.pattern"
+              >
+                Enter a valid email
+              </span>
         </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-
-          <input class="form-control " placeholder="Email " type="Email ">
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
 
@@ -39,13 +100,31 @@
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
 
-          <textarea class="textarea " placeholder="Message " >Message</textarea>
+          <textarea class="textarea " placeholder="Message "
+          [(ngModel)]="contact.contactDescription"
+          #description=ngModel
+          required
+          [ngClass]="{'red-border-class': description.invalid && (description.dirty || description.touched || contactForm.submitted)}"
+          name="description" >Description</textarea>
+          <div
+          class="validation-error"
+          *ngIf="description.invalid && (description.dirty || description.touched || contactForm.submitted)"
+        >
+          <span
+            class="help-block with-errors error__msg"
+            *ngIf="description.errors?.required"
+          >
+            Please enter the description
+          </span>
         </div>
         </div>
+          </div>
+          <button class="send-btn"  
+          type="submit">Send</button>
         </form>
       </div>
       
-      <button class="send-btn ">Send</button>
+      
     </div>
   </div>
 </div>
