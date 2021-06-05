@@ -1,26 +1,23 @@
 package com.mp.PhysicalTrainerV1.service;
 
-import javax.transaction.Transactional;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mp.PhysicalTrainerV1.dao.ContactDAO;
-import com.mp.PhysicalTrainerV1.entities.Contact;
+import com.mp.PhysicalTrainerV1.entities.ContactEntity;
+import com.mp.PhysicalTrainerV1.repository.ContactRepository;
 
 @Service
-public class ContactServiceImpl implements ContactService {
+public class ContactServiceImpl implements ContactService{
 
-	private ContactDAO contactDao;
-	
-	public ContactServiceImpl(ContactDAO theContactDao) {
-		contactDao=theContactDao;
-	}
-	
+	@Autowired
+	private ContactRepository contactRepository;
+
 	@Override
-	@Transactional
-	public void saveContact(Contact contact) {
-		contactDao.save(contact);
-
+	public ContactEntity saveContact(ContactEntity entity) {
+		ContactEntity created=contactRepository.saveAndFlush(entity);
+		return created;
 	}
-
+	
+	
+	
 }
