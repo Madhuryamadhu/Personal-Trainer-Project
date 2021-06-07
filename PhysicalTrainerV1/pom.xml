@@ -52,6 +52,13 @@
 			<version>1.18.20</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-ext -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-ext</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+
 
 	</dependencies>
 
