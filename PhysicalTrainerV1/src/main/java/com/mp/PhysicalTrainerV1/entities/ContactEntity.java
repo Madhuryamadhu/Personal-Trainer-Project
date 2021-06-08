@@ -27,16 +27,16 @@ public class ContactEntity {
 	@Column(name = "id", updatable = false, nullable = false)
 	private String contactId;
 
-	@Column(name="CONTACT_NAME")
+	@Column(name="CONTACT_NAME",nullable=false,length=255)
 	private String contactName;
 
-	@Column(name="CONTACT_MOBILE")
+	@Column(name="CONTACT_MOBILE",nullable=false,length=10,unique = true)
 	private String contactMobile;
 
-	@Column(name="CONTACT_EMAIL")
+	@Column(name="CONTACT_EMAIL",nullable=false,length=30,unique = true)
 	private String contactEmail;
 
-	@Column(name="CONTACT_DESCRIPTION")
+	@Column(name="CONTACT_DESCRIPTION",length=1000)
 	private String contactDescription;
 
 	@Column(name="CONTACT_STATUS")
