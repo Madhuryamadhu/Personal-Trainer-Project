@@ -1515,3 +1515,8 @@ a.readmore_bt {
     color: #18bb18 !important;
     background: #eff1f2;
 }
+
+.ngx-toastr {
+    width: 350px !important; 
+  }
+  

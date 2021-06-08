@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.slf4j.ext.XLogger;
 import org.slf4j.ext.XLoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import com.mp.common.codes.MessageCode;
 
 @RestController
 @RequestMapping("contact")
+@CrossOrigin
 public class ContactController {
 
 	private XLogger logger = XLoggerFactory.getXLogger(ContactController.class.getName());
