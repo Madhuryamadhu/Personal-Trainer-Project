@@ -1,11 +1,11 @@
 package com.mp.PhysicalTrainerV1.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.ext.XLogger;
 import org.slf4j.ext.XLoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,7 @@ public class ContactController {
 
 
 	@PostMapping
-	public ContactResponse createContact(@RequestBody ContactRequest request,HttpServletRequest httpRequest) {
+	public ContactResponse createContact(@Valid @RequestBody ContactRequest request,HttpServletRequest httpRequest) throws Exception{
 		logger.entry(String.format(BEGIN_REQUEST_LOG, httpRequest.getRequestURI()));
 
 		ContactEntity entity=ContactMapper.fromContactRequest(request);

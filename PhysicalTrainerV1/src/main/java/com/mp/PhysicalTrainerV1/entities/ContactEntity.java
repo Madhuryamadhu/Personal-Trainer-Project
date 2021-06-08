@@ -5,18 +5,27 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import lombok.Getter;
+import lombok.Setter;
+
+//TODO try to create table from entity and add validation
+@Getter
+@Setter
 @Entity
 @Table(name="contact_details")
 public class ContactEntity {
 
+	//TODO COMEPLETED--change column name to id
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="CONTACT_ID")
-	private int contactId;
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@Column(name = "id", updatable = false, nullable = false)
+	private String contactId;
 
 	@Column(name="CONTACT_NAME")
 	private String contactName;
@@ -36,62 +45,4 @@ public class ContactEntity {
 	@Column(name="CREATE_DATE")
 	private Date createDate;
 
-	
-	
-	public int getContactId() {
-		return contactId;
-	}
-
-	public void setContactId(int contactId) {
-		this.contactId = contactId;
-	}
-
-	public String getContactName() {
-		return contactName;
-	}
-
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-	}
-
-	public String getContactMobile() {
-		return contactMobile;
-	}
-
-	public void setContactMobile(String contactMobile) {
-		this.contactMobile = contactMobile;
-	}
-
-	public String getContactEmail() {
-		return contactEmail;
-	}
-
-	public void setContactEmail(String contactEmail) {
-		this.contactEmail = contactEmail;
-	}
-
-	public String getContactDescription() {
-		return contactDescription;
-	}
-
-	public void setContactDescription(String contactDescription) {
-		this.contactDescription = contactDescription;
-	}
-
-	public int getContactStatus() {
-		return contactStatus;
-	}
-
-	public void setContactStatus(int contactStatus) {
-		this.contactStatus = contactStatus;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-	
 }

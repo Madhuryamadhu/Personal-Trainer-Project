@@ -16,7 +16,7 @@ import org.springframework.http.HttpStatus;
 @JsonSerialize(using = MessageCode.MessageCodeSerializer.class)
 public enum MessageCode {
   
-  CREATE_CONTACT_SUCCESS(HttpStatus.CREATED, "MSG_0002", "Request Submitted, Trainer will contact you shortly.");
+  CREATE_CONTACT_SUCCESS(HttpStatus.CREATED, "MSG_0001", "Request Submitted, Trainer will contact you shortly.");
 
   private final HttpStatus httpStatus;
   private final String code;
