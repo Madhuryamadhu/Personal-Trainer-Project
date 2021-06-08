@@ -21,22 +21,25 @@ USE `physical_trainer_01`;
 DROP TABLE IF EXISTS `contact_details`;
 
 CREATE TABLE `contact_details` (
-  `contact_id` int NOT NULL AUTO_INCREMENT,
+  `id` varchar(255) NOT NULL,
   `contact_description` varchar(255) DEFAULT NULL,
   `contact_email` varchar(255) DEFAULT NULL,
   `contact_mobile` varchar(255) DEFAULT NULL,
   `contact_name` varchar(255) DEFAULT NULL,
   `contact_status` int DEFAULT NULL,
   `create_date` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`contact_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `contact_details` */
 
-insert  into `contact_details`(`contact_id`,`contact_description`,`contact_email`,`contact_mobile`,`contact_name`,`contact_status`,`create_date`) values 
-(1,NULL,NULL,NULL,'Pradeep Mascarenhas',0,NULL),
-(2,'Like to register for a program','Pradeep@gmail.com','9980835293','Pradeep Mascarenhas',2,'2017-11-01 00:00:00.000000'),
-(3,'Like to register for a program','Pradeep@gmail.com','9980835293','Pradeep Mascarenhas',2,'2017-11-01 00:00:00.000000');
+insert  into `contact_details`(`id`,`contact_description`,`contact_email`,`contact_mobile`,`contact_name`,`contact_status`,`create_date`) values 
+('4028ab6179e62f510179e62f7ed80000','Like to register for a program','Pradeep@gmail.com','9980835293','Pradeep Mascarenhas',1,'2021-06-07 11:15:42.488000'),
+('4028ab6179e62f510179e630a6620001','Like to register for a program','Pradeep','9980835293d','Pradeep Mascarenhas',1,'2021-06-07 11:16:58.589000'),
+('4028ab6179e632aa0179e6335b8e0000','Like to register for a program','Pradeewp','99808352933','Pradeep Mascarenhas',1,'2021-06-07 11:19:56.008000'),
+('4028ab6179e632aa0179e633bfc90001','Like to register for a program','Pradeetp','99808352931','Pradeep Mascarenhas',1,'2021-06-07 11:20:21.677000'),
+('4028ab6179e64ad50179e64ba2690000','Like to register for a program','Pradeetpw','','Pradeep Mascarenhas',1,'2021-06-07 11:46:26.978000'),
+('4028ab6179e659880179e66573c30000','Like to register for a program','Ramesh.Pai@Yahoo.com','8877887788','Ramesh Pai',1,'2021-06-07 12:14:38.333000');
 
 /*Table structure for table `media_details` */
 
@@ -112,11 +115,11 @@ CREATE TABLE `user_billing_details` (
 DROP TABLE IF EXISTS `user_credentials`;
 
 CREATE TABLE `user_credentials` (
-  `USER_ID` int NOT NULL,
+  `ID` varchar(255) NOT NULL,
   `USER_NAME` varchar(30) NOT NULL,
   `PASSWORD` varchar(30) NOT NULL,
   `FAILED_LOGIN_ATTEMPT` int DEFAULT NULL,
-  PRIMARY KEY (`USER_ID`)
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `user_credentials` */
