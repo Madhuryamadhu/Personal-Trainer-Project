@@ -18,10 +18,16 @@ public class ContactResponse extends BaseResponse {
 	@JsonInclude(Include.NON_NULL)
 	private List<ContactEntity> contacts;
 	private long totalLocationsCount;
-	
-	
+
+
 	public ContactResponse(MessageCode messageCode) {
 		super(messageCode);
+	}
+
+	public ContactResponse(MessageCode messageCode,List<ContactEntity> contacts) {
+		super(messageCode);
+		this.contacts=contacts;
+		totalLocationsCount=contacts.size();
 	}
 	
 	
