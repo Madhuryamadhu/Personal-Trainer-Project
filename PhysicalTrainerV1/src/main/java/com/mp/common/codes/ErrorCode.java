@@ -29,7 +29,27 @@ public enum ErrorCode {
 			400,
 			"EC_0002",
 			Constants.BAD_REQUEST,
-			"Contact request already submitted from this mobile number.");
+			"Contact request already submitted from this mobile number."),
+	USER_ALREADY_EXIST_WITH_EMAIL(
+			400,
+			"EC_0003",
+			Constants.BAD_REQUEST,
+			"User request already submitted from this mail."),
+	USER_ALREADY_EXIST_WITH_MOBILE(
+			400,
+			"EC_0004",
+			Constants.BAD_REQUEST,
+			"User request already submitted from this mobile number."),
+	LOGIN_WRONG_USERNAME(
+			400,
+			"EC_0005",
+			Constants.BAD_REQUEST,
+			"Username entered is not correct.Please check it"),
+	LOGIN_WRONG_PASSWORD(
+			400,
+			"EC_0006",
+			Constants.BAD_REQUEST,
+			"Username and password are not matching. Please check it");
 
 	private final int status;
 	private final String code;

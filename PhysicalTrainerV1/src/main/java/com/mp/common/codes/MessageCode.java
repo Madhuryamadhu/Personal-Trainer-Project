@@ -17,7 +17,10 @@ import org.springframework.http.HttpStatus;
 public enum MessageCode {
   
   CREATE_CONTACT_SUCCESS(HttpStatus.CREATED, "MSG_0001", "Request Submitted, Trainer will contact you shortly."),
-  GET_CONTACT_SUCCESS(HttpStatus.OK, "MSG_0002", "Contact Fetched Successfully");
+  GET_CONTACT_SUCCESS(HttpStatus.OK, "MSG_0002", "Contact Fetched Successfully"),
+  CREATE_USER_SUCCESS(HttpStatus.CREATED, "MSG_0003", "User created succefully"),
+  GET_USER_SUCCESS(HttpStatus.OK, "MSG_0004", "User Fetched Successfully"),
+  LOGIN_SUCCESS(HttpStatus.OK, "MSG_0005", "Login Successful");
 
   private final HttpStatus httpStatus;
   private final String code;
